@@ -1,0 +1,21 @@
+<div class="product__page">
+    <img src="{{products[idToNumber-1].img}}" alt="">
+
+    <div class="product__page_leftSide">
+        <h2>{{products[idToNumber-1].name}}</h2>
+        <div class="product_page_rating">
+            <mat-icon *ngFor="let i of [].constructor(ChangeToInt(products[idToNumber-1].rating))">grade</mat-icon>
+            <mat-icon *ngIf="products[idToNumber].rating>ChangeToInt(products[idToNumber-1].rating)">star_half
+            </mat-icon>
+            <h3>{{products[idToNumber-1].rating}} Rating</h3>
+        </div>
+        <h3>{{products[idToNumber-1].price  | uppercase}} $</h3>
+
+    </div>
+    <div class="product__page__rightSide">
+        <div>{{products[idToNumber-1].description}}</div>
+
+        <button>Dodaj do Koszyka</button>
+    </div>
+
+</div>

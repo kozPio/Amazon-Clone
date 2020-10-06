@@ -1,0 +1,49 @@
+.product__card{
+    display: flex;
+    height: 25vh;
+    flex:1;
+    border: 1px solid lightgray;
+
+    img{
+        height: 100%;
+        width: 20vw;
+        padding: 10px;
+    }
+}
+
+.product__card_leftSide{
+    display: flex;
+    flex-direction: column;
+    cursor:pointer;
+    outline: none;
+
+    h2{
+        padding: 10px
+        
+        
+    }
+
+    & h2:hover{
+        text-decoration: underline;
+    }
+    
+
+    h3{
+       padding: 10px
+    } 
+    
+}
+
+.product_card_rating{
+    display: flex;  
+    
+    h3{
+        padding: 0;
+    }
+    mat-icon{
+        color: gold;
+        
+    }
+    
+    
+}

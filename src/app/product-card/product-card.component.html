@@ -1,0 +1,15 @@
+<div class="product__card">
+    <img src="{{product.img}}" alt="">
+
+    <div routerLink="/productPage/:{{product.id}}" class="product__card_leftSide">
+        <h2>{{product.name}}</h2>
+        <div class="product_card_rating">
+            <mat-icon *ngFor="let i of [].constructor(ChangeToInt(product.rating))">grade</mat-icon>
+            <mat-icon *ngIf="product.rating>ChangeToInt(product.rating)">star_half</mat-icon>
+            <h3>{{product.rating}} Rating</h3>
+        </div>
+        <h3>{{product.price}} $</h3>
+
+    </div>
+
+</div>
