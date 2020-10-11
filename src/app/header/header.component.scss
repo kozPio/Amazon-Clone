@@ -8,10 +8,11 @@ $secondary-color: #febd69;
     align-items: center;
 
     img{
+        object-fit: contain;
         height: 10vh;
-        width: 15vw;
         outline: none;
         cursor: pointer;
+        margin-right: 10px;
     }
     
 

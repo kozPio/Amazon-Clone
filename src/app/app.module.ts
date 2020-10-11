@@ -9,6 +9,7 @@ import { BodyComponent } from './body/body.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     HeaderComponent,
     BodyComponent,
     ProductPageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
