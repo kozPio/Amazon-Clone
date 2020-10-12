@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
+  valueX: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+
+  ChangeToX() {
+    if (this.valueX === "") {
+      this.valueX = "X"
+    } else {
+      this.valueX = ""
+    }
+
+
+
+  }
+
 
 }
