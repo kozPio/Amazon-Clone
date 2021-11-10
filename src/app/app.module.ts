@@ -10,6 +10,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FilterComponent } from './filter/filter.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilterComponent } from './filter/filter.component';
     BodyComponent,
     ProductPageComponent,
     ProductCardComponent,
-    FilterComponent
+    FilterComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
