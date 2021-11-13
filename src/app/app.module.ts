@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FilterComponent } from './filter/filter.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     ProductCardComponent,
     FilterComponent,
     LoginPageComponent,
+    BasketComponent,
   ],
   imports: [
     BrowserModule,

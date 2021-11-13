@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { BodyComponent } from './body/body.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { BasketComponent } from './basket/basket.component';
 
 const routes: Routes = [
   { path: 'productPage/:id', component: ProductPageComponent },
   { path: 'main', component: BodyComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'basket', component: BasketComponent },
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 ];
 

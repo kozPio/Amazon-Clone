@@ -1,4 +1,7 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export const fullBasket = createAction('[Basket Component] Full');
-export const emptyBasket = createAction('[Basket Component] Empty');
+export const fullBasket = createAction(
+  'Add to basket',
+  props<{ id: string }>()
+);
+export const emptyBasket = createAction('Empty basket');
