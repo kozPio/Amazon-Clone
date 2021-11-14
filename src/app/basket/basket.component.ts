@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { Product } from './../products';
+import { ProductService } from './../product.service';
 
 @Component({
   selector: 'app-basket',
@@ -9,10 +11,28 @@ import { Store } from '@ngrx/store';
 })
 export class BasketComponent implements OnInit {
   message$: Observable<string>;
+  @Input() product: Product;
 
-  constructor(private store: Store<{ message: string }>) {
+  products: Product[];
+
+  constructor(
+    private store: Store<{ message: string }>,
+    private ProductService: ProductService
+  ) {
     this.message$ = store.select('message');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getProduct();
+  }
+
+  getProduct(): void {
+    this.ProductService.getProducts().subscribe(
+      (products) => (this.products = products)
+    );
+  }
+
+  ChangeToInt(value) {
+    return parseInt(value);
+  }
 }
