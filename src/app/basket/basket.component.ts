@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Product } from './../products';
 import { ProductService } from './../product.service';
+import { emptyBasket } from '../reducers/basketActions';
 
 @Component({
   selector: 'app-basket',
@@ -34,5 +35,9 @@ export class BasketComponent implements OnInit {
 
   ChangeToInt(value) {
     return parseInt(value);
+  }
+
+  basketEmpty() {
+    this.store.dispatch(emptyBasket({ id }));
   }
 }

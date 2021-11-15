@@ -27,7 +27,14 @@ const _basketReducer = createReducer(
   on(fullBasket, (state, action) => {
     return [...state, action.id];
   }),
-  on(emptyBasket, (state) => [...state, 'yellow'])
+  on(emptyBasket, (state, action) => {
+    const index = state.indexOf(action.id);
+    if (index > -1) {
+      state.splice(index, 1);
+    }
+
+    return [...state];
+  })
 );
 
 export function basketReducer(state, action) {

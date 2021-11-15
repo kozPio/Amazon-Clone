@@ -8,8 +8,8 @@
         <h2>{{products[ChangeToInt(id)].name}}</h2>
         <div class="product_page_rating">
             <mat-icon *ngFor="let i of [].constructor(ChangeToInt(products[ChangeToInt(id)-1].rating))">grade</mat-icon>
-            <mat-icon *ngIf="products[idToNumber].rating>ChangeToInt(products[ChangeToInt(id)-1].rating)">star_half
-            </mat-icon>
+            <!-- <mat-icon *ngIf="products[idToNumber].rating>ChangeToInt(products[ChangeToInt(id)-1].rating)">star_half
+            </mat-icon> -->
             <h3>{{products[ChangeToInt(id)-1].rating}} Rating</h3>
         </div>
         <h3>{{products[ChangeToInt(id)-1].price}} $</h3>
@@ -18,7 +18,7 @@
     <div class="product__page__rightSide">
         <div>{{products[ChangeToInt(id)-1].description}}</div>
 
-        <button>Dodaj do Koszyka</button>
+        <button>Usun z koszyka</button>
     </div>
 
   </div>

@@ -4,4 +4,7 @@ export const fullBasket = createAction(
   'Add to basket',
   props<{ id: string }>()
 );
-export const emptyBasket = createAction('Empty basket');
+export const emptyBasket = createAction(
+  'Remove from basket',
+  props<{ id: string }>()
+);
