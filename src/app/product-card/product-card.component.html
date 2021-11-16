@@ -14,7 +14,7 @@
     <div class="product__card__rightSide">
         <button (click)="basketFull(product.id.toString())">Dodaj do Koszyka</button>
         <div>Current Basket: {{ message$ | async }}</div>
-        <button (click)="basketEmpty()">Opróżnij Kosz</button>
+        <button (click)="basketEmpty(product.id.toString())">Opróżnij Kosz</button>
     </div>
     
 

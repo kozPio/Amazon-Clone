@@ -37,7 +37,7 @@ export class BasketComponent implements OnInit {
     return parseInt(value);
   }
 
-  basketEmpty() {
+  basketEmpty(id: string) {
     this.store.dispatch(emptyBasket({ id }));
   }
 }

@@ -24,8 +24,8 @@ export class ProductCardComponent implements OnInit {
     return Math.floor(value);
   }
 
-  basketEmpty() {
-    this.store.dispatch(emptyBasket());
+  basketEmpty(id: string) {
+    this.store.dispatch(emptyBasket({ id }));
   }
 
   basketFull(id: string) {

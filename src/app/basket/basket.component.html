@@ -18,7 +18,7 @@
     <div class="product__page__rightSide">
         <div>{{products[ChangeToInt(id)-1].description}}</div>
 
-        <button>Usun z koszyka</button>
+        <button (click)="basketEmpty(id)">Usun z koszyka</button>
     </div>
 
   </div>

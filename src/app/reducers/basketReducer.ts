@@ -28,10 +28,7 @@ const _basketReducer = createReducer(
     return [...state, action.id];
   }),
   on(emptyBasket, (state, action) => {
-    const index = state.indexOf(action.id);
-    if (index > -1) {
-      state.splice(index, 1);
-    }
+    state = state.filter((id) => id !== action.id);
 
     return [...state];
   })
