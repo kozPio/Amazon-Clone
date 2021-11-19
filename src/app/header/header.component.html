@@ -12,11 +12,11 @@
     <div class="header__leftSide">
         <div class="header__leftSide__text">
             <button routerLink="/login">Zaloguj się</button>
-            <button (click)="countItemsInBasket()">Zworty i zamówienia</button>
+            <button>Zworty i zamówienia</button>
         </div>
 
         <div routerLink="/basket" class="header__leftSide__basket">
-            <div>{{ numberOfProducts }}</div><mat-icon>shopping_cart</mat-icon> Koszyk
+            <div>{{ numberOfProducts.length }}</div><mat-icon>shopping_cart</mat-icon> Koszyk
         </div>
     </div>
 

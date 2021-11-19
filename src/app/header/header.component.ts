@@ -8,16 +8,14 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  productsInBasket$: Observable<string>;
-  numberOfProducts: string;
+  productsInBasket$: Observable<string[]>;
+  numberOfProducts: string[] = [];
 
-  constructor(private store: Store<{ message: string }>) {
+  constructor(private store: Store<{ message: string[] }>) {
     this.productsInBasket$ = store.select('message');
   }
 
-  ngOnInit(): void {}
-
-  countItemsInBasket() {
+  ngOnInit(): void {
     this.productsInBasket$.subscribe(
       (items) => (this.numberOfProducts = items)
     );
