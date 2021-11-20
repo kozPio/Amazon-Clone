@@ -1,24 +1,30 @@
-<div>Current Basket: {{ message$ | async }}</div>
 
-<div *ngFor="let id of message$ | async">
+
+<div *ngFor="let item of arrayOfProducts">
   <div class="product__page">
-    <img src="{{products[ChangeToInt(id)-1].img}}" alt="">
+    <img src="{{products[ChangeToInt(item.productId)-1].img}}" alt="">
 
     <div class="product__page_leftSide">
-        <h2>{{products[ChangeToInt(id)].name}}</h2>
+        <h2>{{products[ChangeToInt(item.productId)].name}}</h2>
         <div class="product_page_rating">
-            <mat-icon *ngFor="let i of [].constructor(ChangeToInt(products[ChangeToInt(id)-1].rating))">grade</mat-icon>
+            <mat-icon *ngFor="let i of [].constructor(ChangeToInt(products[ChangeToInt(item.productId)-1].rating))">grade</mat-icon>
             <!-- <mat-icon *ngIf="products[idToNumber].rating>ChangeToInt(products[ChangeToInt(id)-1].rating)">star_half
             </mat-icon> -->
-            <h3>{{products[ChangeToInt(id)-1].rating}} Rating</h3>
+            <h3>{{products[ChangeToInt(item.productId)-1].rating}} Rating</h3>
         </div>
-        <h3>{{products[ChangeToInt(id)-1].price}} $</h3>
+        <h3>{{products[ChangeToInt(item.productId)-1].price}} $</h3>
 
     </div>
     <div class="product__page__rightSide">
-        <div>{{products[ChangeToInt(id)-1].description}}</div>
+        <div>{{products[ChangeToInt(item.productId)-1].description}}</div>
 
         <button (click)="basketEmpty(id)">Usun z koszyka</button>
+        <div>
+          <button>+</button>
+          <button>-</button>
+          <p>Ilość: {{item.amount}}</p>
+        </div>
+        
     </div>
 
   </div>
