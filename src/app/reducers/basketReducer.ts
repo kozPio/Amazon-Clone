@@ -1,36 +1,28 @@
-// import { Action } from '@ngrx/store';
-
-// export function BasketReducer(
-//   state: string = 'Basket is not filed in with sweets',
-//   action: Action
-// ) {
-//   console.log(action.type, state);
-
-//   switch (action.type) {
-//     case 'FULL':
-//       return (state = 'Basket is full');
-//     case 'EMPTY':
-//       return (state = 'Basket isempty');
-//     default:
-//       return state;
-//   }
-// }
-
 import { createReducer, on } from '@ngrx/store';
 
-import { fullBasket, emptyBasket } from './basketActions';
+import {
+  addItemToBasket,
+  removeOneItemFromBasket,
+  removeItemFromBasket,
+} from './basketActions';
 
 export const initialState: string[] = [];
 
 const _basketReducer = createReducer(
   initialState,
-  on(fullBasket, (state, action) => {
+  on(removeItemFromBasket, (state, action) => {
+    state = state.filter((id) => id !== action.id);
+    return [...state];
+  }),
+  on(addItemToBasket, (state, action) => {
     return [...state, action.id];
   }),
-  on(emptyBasket, (state, action) => {
-    state = state.filter((id) => id !== action.id);
+  on(removeOneItemFromBasket, (state, action) => {
+    let index = state.indexOf(action.id);
+    let temp = [...state];
+    temp.splice(index, 1);
 
-    return [...state];
+    return [...temp];
   })
 );
 

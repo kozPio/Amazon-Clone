@@ -1,10 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 
-export const fullBasket = createAction(
+export const addItemToBasket = createAction(
   'Add to basket',
   props<{ id: string }>()
 );
-export const emptyBasket = createAction(
-  'Remove from basket',
+export const removeItemFromBasket = createAction(
+  'Remove an item  from basket',
+  props<{ id: string }>()
+);
+
+export const removeOneItemFromBasket = createAction(
+  'Remove one instance of item from basket',
   props<{ id: string }>()
 );

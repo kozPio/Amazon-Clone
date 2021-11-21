@@ -3,7 +3,11 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Product } from './../products';
 import { ProductService } from './../product.service';
-import { emptyBasket } from '../reducers/basketActions';
+import {
+  removeOneItemFromBasket,
+  addItemToBasket,
+  removeItemFromBasket,
+} from '../reducers/basketActions';
 
 interface ProductAndNumber {
   amount: number;
@@ -65,7 +69,15 @@ export class BasketComponent implements OnInit {
     return parseInt(value);
   }
 
-  basketEmpty(id: string) {
-    this.store.dispatch(emptyBasket({ id }));
+  removeItemFromBasket(id: string) {
+    this.store.dispatch(removeItemFromBasket({ id }));
+  }
+
+  removeOneItemFromBasket(id: string) {
+    this.store.dispatch(removeOneItemFromBasket({ id }));
+  }
+
+  addItemToBasket(id: string) {
+    this.store.dispatch(addItemToBasket({ id }));
   }
 }

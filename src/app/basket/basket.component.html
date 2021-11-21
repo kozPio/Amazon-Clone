@@ -18,13 +18,13 @@
     <div class="product__page__rightSide">
         <div>{{products[ChangeToInt(item.productId)-1].description}}</div>
 
-        <button (click)="basketEmpty(id)">Usun z koszyka</button>
-        <div>
-          <button>+</button>
-          <button>-</button>
+        
+        <div class="addRemoveItems">
+          <button (click)="addItemToBasket(item.productId)">+</button>
+          <button (click)="removeOneItemFromBasket(item.productId)">-</button>         
           <p>Ilość: {{item.amount}}</p>
         </div>
-        
+        <button class="removeItemFromBasket" (click)="removeItemFromBasket(item.productId)">Usun z koszyka</button>
     </div>
 
   </div>

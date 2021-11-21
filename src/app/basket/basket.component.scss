@@ -1,6 +1,6 @@
 .product__page {
   display: flex;
-  height: 40vh;
+  height: 25vh;
   flex: 1;
   border: 1px solid lightgray;
 
@@ -42,8 +42,28 @@
   margin-top: 20px;
   align-items: center;
 
-  button {
-    margin: 30px;
+  .addRemoveItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      background-color: #febd69;
+      color: #111;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      margin: 5px;
+      padding: 5px;
+    }
+
+    p {
+      margin: 5px;
+    }
+  }
+
+  .removeItemFromBasket {
+    margin-top: 10px;
     width: 100px;
     background-color: #febd69;
     color: #111;

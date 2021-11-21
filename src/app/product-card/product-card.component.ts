@@ -2,7 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from './../products';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { fullBasket, emptyBasket } from '../reducers/basketActions';
+import {
+  addItemToBasket,
+  removeOneItemFromBasket,
+} from '../reducers/basketActions';
 
 @Component({
   selector: 'app-product-card',
@@ -25,10 +28,10 @@ export class ProductCardComponent implements OnInit {
   }
 
   basketEmpty(id: string) {
-    this.store.dispatch(emptyBasket({ id }));
+    this.store.dispatch(removeOneItemFromBasket({ id }));
   }
 
   basketFull(id: string) {
-    this.store.dispatch(fullBasket({ id }));
+    this.store.dispatch(addItemToBasket({ id }));
   }
 }
