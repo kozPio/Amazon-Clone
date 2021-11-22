@@ -1,12 +1,21 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .product__page {
   display: flex;
-  height: 25vh;
-  flex: 1;
+  width: 700px;
+
   border: 1px solid lightgray;
 
   img {
     height: 100%;
-    width: 20vw;
+    max-width: 120px;
+    max-height: 90px;
     padding: 10px;
   }
 }
@@ -14,33 +23,20 @@
 .product__page_leftSide {
   display: flex;
   flex-direction: column;
-  min-width: 30vw;
-
-  h2 {
-    padding: 10px;
-  }
-
-  h3 {
-    padding: 10px;
-  }
-}
-
-.product_page_rating {
-  display: flex;
-
-  h3 {
-    padding: 0;
-  }
-  mat-icon {
-    color: gold;
+  margin-top: 20px;
+  // min-width: 30vw;
+  p {
+    font-size: 14px;
   }
 }
 
 .product__page__rightSide {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-bottom: 5px;
   align-items: center;
+  justify-content: center;
+  margin-right: 20px;
 
   .addRemoveItems {
     display: flex;
@@ -54,21 +50,21 @@
       outline: none;
       cursor: pointer;
       margin: 5px;
-      padding: 5px;
-    }
-
-    p {
-      margin: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 4px;
     }
   }
 
   .removeItemFromBasket {
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100px;
     background-color: #febd69;
     color: #111;
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 2px 1px;
+    border-radius: 4px;
   }
 }

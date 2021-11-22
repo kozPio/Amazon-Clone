@@ -14,6 +14,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { FilterComponent } from './filter/filter.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { BasketComponent } from './basket/basket.component';
+import { HoverEnlargeImageComponent } from './hover-enlarge-image/hover-enlarge-image.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BasketComponent } from './basket/basket.component';
     FilterComponent,
     LoginPageComponent,
     BasketComponent,
+    HoverEnlargeImageComponent,
   ],
   imports: [
     BrowserModule,
