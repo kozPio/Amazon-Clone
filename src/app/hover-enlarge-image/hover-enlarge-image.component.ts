@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HoverEnlargeImageComponent implements OnInit {
   @Input() image: string;
+  @Input() firstClass: boolean = false;
+  @Input() secondClass: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}

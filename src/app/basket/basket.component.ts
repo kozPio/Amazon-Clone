@@ -14,6 +14,15 @@ interface ProductAndNumber {
   productId: string;
 }
 
+// interface ShowInnerInterface {
+//   id: number;
+//   display: boolean;
+// }
+
+interface ShowInterface {
+  id: number;
+}
+
 @Component({
   selector: 'app-basket',
   templateUrl: './basket.component.html',
@@ -25,6 +34,7 @@ export class BasketComponent implements OnInit {
   @Input() product: Product;
 
   products: Product[];
+  show: ShowInterface = { id: null };
 
   constructor(
     private store: Store<{ message: string[] }>,
@@ -79,5 +89,13 @@ export class BasketComponent implements OnInit {
 
   addItemToBasket(id: string) {
     this.store.dispatch(addItemToBasket({ id }));
+  }
+
+  mouseEnter(id: number) {
+    this.show.id = id;
+  }
+
+  mouseLeave() {
+    this.show.id = null;
   }
 }

@@ -16,6 +16,7 @@ export class ProductCardComponent implements OnInit {
   message$: Observable<string[]>;
 
   @Input() product: Product;
+  show: boolean = false;
 
   constructor(private store: Store<{ message: string[] }>) {
     this.message$ = store.select('message');
@@ -33,5 +34,13 @@ export class ProductCardComponent implements OnInit {
 
   basketFull(id: string) {
     this.store.dispatch(addItemToBasket({ id }));
+  }
+
+  mouseEnter() {
+    this.show = true;
+  }
+
+  mouseLeave() {
+    this.show = false;
   }
 }

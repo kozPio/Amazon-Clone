@@ -3,7 +3,8 @@
   <h2>Produkty w koszyku</h2>
   <div *ngFor="let item of arrayOfProducts">
     <div class="product__page">
-      <img src="{{products[ChangeToInt(item.productId)-1].img}}" alt="">
+      <img (mouseenter) ="mouseEnter(ChangeToInt(item.productId)-1) "  (mouseleave) ="mouseLeave()" src="{{products[ChangeToInt(item.productId)-1].img}}" alt="">
+      <app-hover-enlarge-image *ngIf="show.id === ChangeToInt(item.productId)-1" [firstClass]="false" secondClass="true" [image]="products[ChangeToInt(item.productId)-1].img"></app-hover-enlarge-image>
   
       <div class="product__page_leftSide">
           <p>{{products[ChangeToInt(item.productId)].name}}</p>
