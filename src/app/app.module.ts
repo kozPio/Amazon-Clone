@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { basketReducer } from './reducers/basketReducer';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +36,8 @@ import { HoverEnlargeImageComponent } from './hover-enlarge-image/hover-enlarge-
     AppRoutingModule,
     MatIconModule,
     StoreModule.forRoot({ message: basketReducer }),
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

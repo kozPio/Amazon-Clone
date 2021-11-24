@@ -1,11 +1,15 @@
 <div class="login-page">
   <div class="login-page-container">
     <p class="login-page-head">Login In</p>
-    <label>login or email</label>
-    <input type="text">
-    <label>password</label>
-    <input type="password">
-    <button>Login</button>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>login or email</label>
+      <input formControlName="loginOrEmail" placeholder="enter your login or email" type="text">
+      <span class="invalidInput" *ngIf="loginOrEmail.invalid && loginOrEmail.touched">Login must be atleast 5 charachters long</span>
+      <label>password</label>
+      <input formControlName="password" placeholder="enter your password" type="password">
+      <span class="invalidInput" *ngIf="password.invalid && password.touched">Password  must be atleast 8 charachters long</span>
+      <button [disabled]="loginForm.invalid" type="submit">Login</button>
+  </form>
     <p routerLink="/main" class="login-page-back-to-main">Back to main page</p>
   </div>
 </div>

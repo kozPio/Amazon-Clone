@@ -16,23 +16,42 @@
     border: 1px solid rgb(221, 221, 221);
     background-color: #fff;
 
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: 200px;
+
+      button {
+        border-radius: 4px;
+        background-color: #febd69;
+        padding: 5px;
+        width: 90%;
+        margin: 5px 0;
+      }
+      input.ng-invalid {
+        border-left: 5px solid red;
+      }
+      input.ng-valid {
+        border-left: 5px solid greenyellow;
+      }
+      .invalidInput {
+        color: orange;
+        font-size: 12px;
+      }
+
+      input {
+        border-radius: 4px;
+        padding: 5px;
+        width: 90%;
+        margin: 5px 0;
+      }
+    }
+
     .login-page-head {
       font-size: 24px;
-    }
-
-    button {
-      border-radius: 4px;
-      background-color: #febd69;
-      padding: 5px;
-      width: 90%;
-      margin: 5px 0;
-    }
-
-    input {
-      border-radius: 4px;
-      padding: 5px;
-      width: 90%;
-      margin: 5px 0;
     }
 
     .login-page-back-to-main:hover {
